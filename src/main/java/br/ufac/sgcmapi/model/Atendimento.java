@@ -19,7 +19,7 @@ public class Atendimento implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
-    private Long ig;
+    private Long id;
 
     @Column(nullable = false)
     private Date data;
@@ -38,14 +38,14 @@ public class Atendimento implements Serializable{
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private EStatusAtendimento status;
+    private EStatusAtendimento status = EStatusAtendimento.AGENDADO;
 
-    public Long getIg() {
-        return ig;
+    public Long getId() {
+        return id;
     }
 
-    public void setIg(Long ig) {
-        this.ig = ig;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getData() {
